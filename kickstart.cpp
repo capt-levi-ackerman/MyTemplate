@@ -1,6 +1,7 @@
 /*
-     THINK TWICE,
-             CODE ONCE.
+                    ------ Ackerman ------
+     A single soldier might pose a threat to me?
+     Yes! Captain Levi is Dangerous.   
 */
 #include <iostream>
 #include <bits/stdc++.h>
