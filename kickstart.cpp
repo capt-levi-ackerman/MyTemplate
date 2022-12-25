@@ -31,9 +31,11 @@ using namespace std;
 #define print1(a)      for(auto x : a) cout << x.F << " " << x.S << endl
 #define print2(a,x,y)  for(int i = x; i < y; i++) cout<< a[i]<< " "; cout << endl
 
-#------------------------------------ MOD Operations (Unleash the Beast Mode) ----------------------------------
-# Just declare a variable mod with value and use these functions.
 
+//---------- MOD Operations (Unleash the Beast Mode) -----------------------
+
+
+int mod = 1e9 + 7;
 
 inline void add(int &a, int b) {
   a += b;
@@ -75,7 +77,7 @@ inline int inv(int a) {
   return u;
 }
 
-#--------------------------------------------------------------------------
+//-------------------------------------------------------------
 
 
 inline int power(int a, int b)
