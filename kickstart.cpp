@@ -104,6 +104,23 @@ void __f (const char* names, Arg1&& arg1, Args&&... args)
 // const int N = 200005;
 #define PI 3.1415929
 
+/* void sieve()
+{
+  is_prime[0]=is_prime[1] = true;
+  for(int i=2;i<=N;i++)
+  {
+    if(is_prime[i]==false && i*i<=N)
+    {
+      for(int j = i*i;j<=N;j+=i)
+      {
+        is_prime[j]= true;
+      }
+    }
+  }
+}
+*/
+
+
 void solve() {
    
    
