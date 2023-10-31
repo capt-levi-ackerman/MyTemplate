@@ -150,38 +150,40 @@ void __f (const char* names, Arg1&& arg1, Args&&... args)
 
 // DSU
 
-/* 
-const int M = 4 * 1e5 + 1;
-int parent[M];
-int size1[M];
-
-void make_set(int v) {
-     parent[v] = v;
-     size1[v] = 1;
-  }
-
-int find_set(int v) {
-    if (v == parent[v])
-        return v;
-    return parent[v] = find_set(parent[v]);
-}
-
-bool union_sets(int a, int b) {
-    a = find_set(a);
-    b = find_set(b);
-    if (a == b) {
-        return false;
+struct DSU
+{
+    int n;
+    vi parent;
+    vi size1;
+    DSU(int N)
+    {
+        n = N;
+        parent.assign(n + 1, -1);
+        size1.assign(n + 1, 1);
+        for (int i = 0; i <= n; i++)parent[i] = i;
     }
-    if (a != b) {
-        if (size1[a] < size1[b])
-            swap(a, b);
-        parent[b] = a;
-        size1[a] += size1[b];
+    int find_set(int i)
+    {
+        if (parent[i] == i)return i;
+        return parent[i] = find_set(parent[i]);
     }
-    return true;
-}
+    bool union_sets(int a, int b)
+    {
+        a = find_set(a);
+        b = find_set(b);
+        if (a == b) {
+            return false;
+        }
+        if (a != b) {
+            if (size1[a] < size1[b])
+                swap(a, b);
+            parent[b] = a;
+            size1[a] += size1[b];
+        }
+        return true;
+    }
+};
 
-*/
 
 
 void solve() {
